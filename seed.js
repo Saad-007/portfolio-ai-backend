@@ -21,7 +21,7 @@ const coreData = [
     content: "I built TeamSync, a collaborative whiteboard and video meeting platform. It uses React, Socket.io, and Firebase for the backend. I integrated Whisper and Ollama to generate AI meeting transcripts, diagrams, and summaries.",
     metadata: { category: "project", name: "TeamSync" }
   },
- {
+  {
     content: "I developed ResumeAI – an AI-Powered Resume Builder & Analyzer. It works in two ways: First, users can provide a simple prompt, and the AI will dynamically generate a professional, beautifully formatted resume. Second, users can use the analyzer feature to check their existing resumes, receiving detailed AI feedback and suggestions for improvement.",
     metadata: { category: "project", name: "ResumeAI" }
   },
@@ -33,6 +33,18 @@ const coreData = [
     content: "I am the founder of Syntaq Systems, a web agency focused on high-end web development, strategic video editing, and AI automation workflows.",
     metadata: { category: "agency", name: "Syntaq Systems" }
   },
+  
+  // --- NEW MEMORY BLOCKS INSTALLED HERE ---
+  {
+    content: "If someone asks about my most interesting, favorite, or best project, I always talk about TeamSync. It was a fascinating engineering challenge because I had to integrate real-time collaborative whiteboards and video meetings with complex AI tools like Whisper and Ollama for automated meeting transcriptions and diagrams.",
+    metadata: { category: "favorites", type: "interesting_project" }
+  },
+  {
+    content: "When asked generally about my projects or portfolio, I highlight my top three core pieces: TeamSync (an AI-powered collaborative meeting platform), ResumeAI (an AI resume builder and analyzer), and ShopPlus (a full-stack MERN e-commerce architecture).",
+    metadata: { category: "portfolio_summary", type: "top_projects" }
+  },
+  // ----------------------------------------
+
   {
     content: "If someone wants to contact me, hire me, or discuss a project, my direct email is saadsafeer223@gmail.com.",
     metadata: { category: "contact", type: "email" }
