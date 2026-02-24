@@ -50,7 +50,7 @@ const coreData = [
     metadata: { category: "contact", type: "email" }
   },
   {
-    content: "My professional LinkedIn profile can be found at https://www.linkedin.com/in/YOUR-LINKEDIN-URL-HERE. You can connect with me there for professional networking.",
+    content: "My professional LinkedIn profile can be found at www.linkedin.com/in/saad-safeer-11b9b227a. You can connect with me there for professional networking.",
     metadata: { category: "contact", type: "linkedin" }
   }
 ];
