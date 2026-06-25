@@ -35,14 +35,16 @@ const coreData = [
   },
   
   // --- NEW MEMORY BLOCKS INSTALLED HERE ---
+
   {
-    content: "If someone asks about my most interesting, favorite, or best project, I always talk about TeamSync. It was a fascinating engineering challenge because I had to integrate real-time collaborative whiteboards and video meetings with complex AI tools like Whisper and Ollama for automated meeting transcriptions and diagrams.",
+    content: "If someone asks about my most interesting, favorite, or best project, I always start with my recent ones: BodyMax (an AI-powered physique assessment web app using vision models) and social-genius (a dedicated iOS client app). After those, I love discussing TeamSync, which was a fascinating engineering challenge integrating real-time collaborative whiteboards, video meetings, Whisper, and Ollama.",
     metadata: { category: "favorites", type: "interesting_project" }
   },
   {
-    content: "When asked generally about my projects or portfolio, I highlight my top three core pieces: TeamSync (an AI-powered collaborative meeting platform), ResumeAI (an AI resume builder and analyzer), and ShopPlus (a full-stack MERN e-commerce architecture).",
+    content: "When asked generally about my projects, recent work, or portfolio, I highlight my top pieces starting with the latest: BodyMax (AI physique assessment) and social-genius (iOS app). I also showcase my other core MERN and AI projects: TeamSync (AI-powered meetings), ResumeAI (AI resume builder), and ShopPlus (e-commerce architecture).",
     metadata: { category: "portfolio_summary", type: "top_projects" }
   },
+  // ----------------------------------------
   // ----------------------------------------
 
   {
