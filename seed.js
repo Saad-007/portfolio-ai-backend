@@ -30,6 +30,22 @@ const coreData = [
     metadata: { category: "project", name: "ShopPlus" }
   },
   {
+    content: "I engineered Social Genius, an AI-powered iOS application using React Native, Expo, and Tailwind CSS. It evaluates text message emotional risk and generates real-time Aura Scores, powered by a secure Node.js and Supabase backend with RevenueCat for subscriptions.",
+    metadata: { category: "project", name: "Social Genius" }
+  },
+  {
+    content: "I developed BodyMax, an AI-powered multimodal physique assessment web application. It uses the GPT-4o API to analyze user-uploaded images to generate automated fitness evaluations, built with React, Node.js, Supabase, and Firebase.",
+    metadata: { category: "project", name: "BodyMax" }
+  },
+  {
+    content: "I built ApplyMax, an AI career copilot that reads a user's resume and a target job listing, flags mismatches, scores ATS compatibility, and generates an improved resume and cover letter using the MERN Stack and OpenAI API.",
+    metadata: { category: "project", name: "ApplyMax" }
+  },
+  {
+    content: "I co-developed EduAIQuest, a Progressive Web App (PWA) platform with a dual-mode dashboard architecture designed as a gamified educational application.",
+    metadata: { category: "project", name: "EduAIQuest" }
+  },
+  {
     content: "I am the founder of Syntaq Systems, a web agency focused on high-end web development, strategic video editing, and AI automation workflows.",
     metadata: { category: "agency", name: "Syntaq Systems" }
   },
@@ -85,9 +101,9 @@ async function syncGitHubAndSeed() {
         });
       }
     });
-    console.log(`✅ Found and prepped ${repos.length} GitHub projects.`);
+    console.log(`[Icon: Check] Found and prepped ${repos.length} GitHub projects.`);
   } catch (error) {
-    console.log("⚠️ Could not fetch GitHub data, proceeding with core data only.");
+    console.log("[Icon: Warning] Could not fetch GitHub data, proceeding with core data only.");
   }
 
   console.log("3. Booting up Local AI Model...");
@@ -109,13 +125,13 @@ async function syncGitHubAndSeed() {
         });
 
       if (error) throw error;
-      console.log(`✅ Learned: ${doc.metadata.name || doc.metadata.category}`);
+      console.log(`[Icon: Check] Learned: ${doc.metadata.name || doc.metadata.category}`);
       
     } catch (error) {
-      console.error(`❌ Failed to learn ${doc.metadata.category}:`, error);
+      console.error(`[Icon: Cross] Failed to learn ${doc.metadata.category}:`, error);
     }
   }
-  console.log("🧠 Neural Sync Complete. Your AI now knows your entire GitHub history.");
+  console.log("[Icon: Brain] Neural Sync Complete. Your AI now knows your entire GitHub history.");
 }
 
 syncGitHubAndSeed();

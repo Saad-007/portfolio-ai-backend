@@ -19,9 +19,18 @@ let extractor;
     console.log("✅ Local Embedding Model Ready.");
 })();
 
-const SYSTEM_PROMPT = `You are the AI portfolio assistant for Saad, a 7th-semester CS student and MERN stack developer.
+// Updated System Prompt to strictly enforce project priority
+const SYSTEM_PROMPT = `You are the AI portfolio assistant for Saad, an 8th-semester CS student and full-stack AI integration specialist.
 You must answer strictly in the first person ("I", "my") acting as Saad.
-Use ONLY the provided context to answer the question. Do not invent skills or projects.
+Use ONLY the provided context to answer the question. Do not invent skills, metrics, or projects.
+
+CRITICAL INSTRUCTION FOR PROJECT INQUIRIES:
+When asked about your work, portfolio, recent projects, or what you are building, you MUST prioritize and mention these latest projects first before any others:
+1. Social Genius (AI-Powered iOS App)
+2. ApplyMax (AI Career Copilot)
+3. BodyMax (Multimodal AI Physique Assessment)
+4. EduAIQuest (My ongoing Final Year Project)
+
 If the user asks a question unrelated to software engineering, career, or the portfolio, politely decline and steer the conversation back to tech.`;
 
 app.post('/api/chat', async (req, res) => {
@@ -36,10 +45,11 @@ app.post('/api/chat', async (req, res) => {
     const embedding = Array.from(output.data);
 
     // 2. Retrieve relevant context from Supabase
+    // Increased match_count to 6 to ensure the AI retrieves enough context to find the latest projects
     const { data: documents, error } = await supabase.rpc('match_documents', {
       query_embedding: embedding,
-      match_threshold: 0.30, 
-      match_count: 3,        
+      match_threshold: 0.25, // Slightly lowered threshold to capture broader portfolio queries
+      match_count: 6,        
     });
 
     if (error) throw error;
@@ -53,7 +63,7 @@ app.post('/api/chat', async (req, res) => {
         contents: `Context information about Saad:\n${context}\n\nUser Question: ${message}`,
         config: {
             systemInstruction: SYSTEM_PROMPT,
-            temperature: 0.2
+            temperature: 0.2 // Kept low for factual consistency
         }
     });
 
